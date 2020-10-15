@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 const keys = require("./Config/keys");
+const user = require("./Routes/user");
 
 app.get("/", async (req, res) => {
   res.send("Hello");
@@ -27,5 +28,6 @@ const server = app.listen(port, () => {
 app.use(express.json());
 app.use(cors());
 app.use("/Image", express.static("Image"));
+app.use("/api/user", user);
 
 module.exports = server;
