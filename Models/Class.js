@@ -11,6 +11,7 @@ const classSchema = new Schema({
     type: String,
     required: true
   },
+  image: String,
   meals: [
     {
       type: Schema.Types.ObjectId,
