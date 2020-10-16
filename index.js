@@ -9,6 +9,7 @@ const app = express();
 const keys = require("./Config/keys");
 const user = require("./Routes/user");
 const clas = require("./Routes/class");
+const menu = require("./Routes/menu");
 
 app.get("/", async (req, res) => {
   res.send("Hello");
@@ -31,5 +32,6 @@ app.use(cors());
 app.use("/Image", express.static("Image"));
 app.use("/api/user", user);
 app.use("/api/class", clas);
+app.use("/api/menu", menu);
 
 module.exports = server;
