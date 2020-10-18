@@ -12,6 +12,8 @@ const clas = require("./Routes/class");
 const menu = require("./Routes/menu");
 const mealImage = require("./Controllers/Menu/addImage");
 
+const classImage = require("./Controllers/Class/addImage");
+
 app.get("/", async (req, res) => {
   res.send("Hello");
   console.log("Hi");
@@ -30,10 +32,13 @@ const server = app.listen(port, () => {
 
 app.use(express.json());
 app.use(cors());
-app.use("/Image", express.static("Image"));
+app.use("/Menu_Image", express.static("Menu_Image"));
+app.use("/Class_Image", express.static("Class_Image"));
 app.use("/api/user", user);
 app.use("/api/class", clas);
 app.use("/api/menu", menu);
 app.use("/api/menu", mealImage);
+
+app.use("/api/class", classImage);
 
 module.exports = server;
