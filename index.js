@@ -11,6 +11,7 @@ const user = require("./Routes/user");
 const clas = require("./Routes/class");
 const menu = require("./Routes/menu");
 const mealImage = require("./Controllers/Menu/addImage");
+
 const classImage = require("./Controllers/Class/addImage");
 
 app.get("/", async (req, res) => {
@@ -37,6 +38,7 @@ app.use("/api/user", user);
 app.use("/api/class", clas);
 app.use("/api/menu", menu);
 app.use("/api/menu", mealImage);
+
 app.use("/api/class", classImage);
 
 module.exports = server;
