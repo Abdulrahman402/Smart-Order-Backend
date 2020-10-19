@@ -3,6 +3,8 @@ const express = require("express");
 const winston = require("winston");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
+const compression = require("compression");
 
 const app = express();
 
@@ -32,6 +34,8 @@ const server = app.listen(port, () => {
 
 app.use(express.json());
 app.use(cors());
+app.use(helmet());
+app.use(compression());
 app.use("/Menu_Image", express.static("Menu_Image"));
 app.use("/Class_Image", express.static("Class_Image"));
 app.use("/api/user", user);
