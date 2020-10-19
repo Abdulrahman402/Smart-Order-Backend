@@ -10,6 +10,7 @@ const keys = require("./Config/keys");
 const user = require("./Routes/user");
 const clas = require("./Routes/class");
 const menu = require("./Routes/menu");
+const table = require("./Routes/table");
 const mealImage = require("./Controllers/Menu/addImage");
 const classImage = require("./Controllers/Class/addImage");
 
@@ -36,6 +37,7 @@ app.use("/Class_Image", express.static("Class_Image"));
 app.use("/api/user", user);
 app.use("/api/class", clas);
 app.use("/api/menu", menu);
+app.use("/api/table", table);
 app.use("/api/menu", mealImage);
 app.use("/api/class", classImage);
 

@@ -7,7 +7,7 @@ const { Menu } = require("../../Models/Menu");
 
 const imageStorage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, "Image");
+    cb(null, "Menu_Image");
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname);

@@ -5,7 +5,5 @@ exports.showClass = async function(req, res, next) {
     .select("-_id")
     .populate("meals", "-class -_id");
 
-  console.log(req.params.englishName);
-
   res.send(clas);
 };
