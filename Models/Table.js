@@ -5,24 +5,27 @@ const keys = require("../Config/keys");
 
 const Schema = mongoose.Schema;
 
-const tableSchema = new Schema({
-  number: {
-    type: Number,
-    required: true
-  },
-  order: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Card"
+const tableSchema = new Schema(
+  {
+    number: {
+      type: Number,
+      required: true
+    },
+    order: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Card"
+      }
+    ],
+    isActive: {
+      type: Boolean,
+      default: false
     }
-  ],
-  isActive: {
-    type: Boolean,
-    default: false
-  }
-});
+  },
+  { timestamps: true }
+);
 
-userSchema.methods.generateAuthToken = async function() {
+tableSchema.methods.generateAuthToken = async function() {
   const token = jwt.sign(
     { _id: this._id, number: this.number, isActive: this.isActive },
     keys.tokenSecretKey
