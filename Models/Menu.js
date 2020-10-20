@@ -12,7 +12,10 @@ const menuSchema = new Schema(
       type: String
     },
     image: String,
-    price: Number,
+    price: {
+      type: Number,
+      required: true
+    },
     class: {
       type: Schema.Types.ObjectId,
       ref: "Class"
