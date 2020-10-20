@@ -4,7 +4,7 @@ const { Table } = require("../../Models/Table");
 
 exports.tableLogin = async function(req, res, next) {
   const table = await Table.findOneAndUpdate(
-    { number: req.params.number },
+    { _id: req.params.tableId },
     { $set: { isActive: true } },
     { new: true }
   );

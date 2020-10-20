@@ -19,6 +19,6 @@ router.get("/showTable/:tableId", showTable.showTable);
 
 router.get("/displayTables", displayTables.displayTables);
 
-router.get("/tableLogin/:number", tableLogin.tableLogin);
+router.get("/tableLogin/:tableId", tableLogin.tableLogin);
 
 module.exports = router;
