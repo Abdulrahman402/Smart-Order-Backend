@@ -36,7 +36,7 @@ function addMeal(meal) {
   const schema = joi.object({
     name: joi.string().required(),
     description: joi.string().required(),
-    price: joi.number().required()
+    price: joi.array().required()
   });
   return schema.validate(meal);
 }
